@@ -28,8 +28,26 @@ public class Operations {
         
     }
 
+    private void assignmentOperators (){
+        // simple assignment
+        int a = 10;
+
+        // chained assignment
+        int b, c, d;
+
+        // compound assignment
+        int e = 10;
+        e += 5;
+
+        // multiple assignment
+        int f = 10, g = 20, h = 30;
+
+        // mixed assignment
+        int i = 10, j = 20, k = 30;
+    }
     public static void main(String[] args) {
-        Operations operations = new Operations();
-        operations.arithmeticOperator();
+        Operations app = new Operations();
+        app.arithmeticOperator();
+        app.assignmentOperators();
     }
 }
