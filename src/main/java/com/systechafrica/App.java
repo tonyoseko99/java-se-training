@@ -13,12 +13,35 @@ public class App {
         return a + b;
     }
 
-    // method that returns 1 to 5 if a condition is true
     public int returnOneToFive(boolean condition) {
         if (condition) {
             return 5;
         } else {
             return 1;
+        }
+    }
+
+    public void checkType(Object obj) {
+        if (obj instanceof String) {
+            System.out.println("String");
+        } else if (obj instanceof Integer) {
+            System.out.println("Integer");
+        } else if (obj instanceof Double) {
+            System.out.println("Double");
+        } else if (obj instanceof Float) {
+            System.out.println("Float");
+        } else if (obj instanceof Boolean) {
+            System.out.println("Boolean");
+        } else if (obj instanceof Character) {
+            System.out.println("Character");
+        } else if (obj instanceof Long) {
+            System.out.println("Long");
+        } else if (obj instanceof Byte) {
+            System.out.println("Byte");
+        } else if (obj instanceof Short) {
+            System.out.println("Short");
+        } else {
+            System.out.println("Other");
         }
     }
 }
