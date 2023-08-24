@@ -4,36 +4,6 @@
 Java is a programming language and a platform. Java is a high level, robust, object-oriented and secure programming language.
 ### 1.2. History of Java
 Java was developed by James Gosling in 1991 at Sun Microsystems. It was first released in 1995 as Java 1.0.
-### 1.3. Features of Java
-#### 1.3.1. Simple
-Java is easy to learn and its syntax is quite simple, clean and easy to understand.
-#### 1.3.2. Object-Oriented
-Java is an object-oriented programming language. Everything in Java is an object. Object-oriented means we organize our software as a combination of different types of objects that incorporates both data and behavior.
-#### 1.3.3. Portable
-Java is portable, which means that it can execute on any platform. Java achieves portability by compiling the code into bytecode which is then interpreted by the JVM (Java Virtual Machine).
-#### 1.3.4. Platform Independent
-Java is platform independent, which means that it can run on any platform that has a JVM installed in it. JVM converts the bytecode into machine language and executes it.
-#### 1.3.5. Secured
-Java is secured because it doesn't use explicit pointers. Also, Java programs run inside a virtual machine sandbox that cannot access the host operating system.
-#### 1.3.6. Robust
-Java is robust because it uses strong memory management. There is a lack of pointers that avoids security problems. There is automatic garbage collection in java which runs on the Java Virtual Machine to get rid of objects which are not being used by a Java application anymore.
-#### 1.3.7. Architecture-neutral
-Java is architecture-neutral because there are no implementation-dependent features, for example, the size of primitive types is fixed.
-#### 1.3.8. Interpreted
-Java is an interpreted language. It determines the errors while the program is running. This makes Java high performing as compared to other programming languages.
-#### 1.3.9. High Performance
-Java is faster than other traditional interpreted programming languages because Java bytecode is "close" to native code. It is still a little bit slower than a compiled language (e.g., C++).
-#### 1.3.10. Multithreaded
-Java is multithreaded. It allows us to write programs that do many things simultaneously. Threads can run independently, performing different tasks in the same program.
-#### 1.3.11. Distributed
-Java is distributed because it facilitates users to create distributed applications in Java. RMI and EJB are used for creating distributed applications. This feature of Java makes us able to access files by calling the methods from any machine on the internet.
-
-### 1.4. Java Virtual Machine (JVM)
-JVM is a virtual machine that provides a runtime environment to execute Java bytecode. It is the specification that provides a runtime environment in which Java bytecode can be executed.
-### 1.5. Java Development Kit (JDK)
-JDK is a software development kit that provides a development environment to develop applications in Java. It is the superset of JRE (Java Runtime Environment) and contains everything that JRE has. It contains a JRE to execute Java programs and tools to develop Java applications.
-### 1.6. Java Runtime Environment (JRE)
-JRE is an environment that provides a runtime environment in which Java bytecode can be executed. It is the implementation of JVM. It physically exists. It contains a set of libraries + other files that JVM uses at runtime.
 
 ## 2. Java Environment Setup
 ### 2.1. Java Installation
