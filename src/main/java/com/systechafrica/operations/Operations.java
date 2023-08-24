@@ -45,9 +45,14 @@ public class Operations {
         // mixed assignment
         int i = 10, j = 20, k = 30;
     }
+    
+    private void comparisonOperators (){
+        
+    }
     public static void main(String[] args) {
         Operations app = new Operations();
         app.arithmeticOperator();
         app.assignmentOperators();
+        app.comparisonOperators();
     }
 }
