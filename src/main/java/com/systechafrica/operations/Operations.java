@@ -25,10 +25,9 @@ public class Operations {
         int quotient = studentTwoAge / studentOneAge;
         LOGGER.info("Quotient is " + quotient);
 
-        
     }
 
-    private void assignmentOperators (){
+    private void assignmentOperators() {
         // simple assignment
         int a = 10;
 
@@ -45,14 +44,87 @@ public class Operations {
         // mixed assignment
         int i = 10, j = 20, k = 30;
     }
-    
-    private void comparisonOperators (){
-        
+
+    private void comparisonOperators() {
+
+        // equal to
+        int a = 10, b = 20;
+        if (a == b) {
+            LOGGER.info("a is equal to b");
+        } else {
+            LOGGER.info("a is not equal to b");
+        }
+
+        // not equal to
+        if (a != b) {
+            LOGGER.info("a is not equal to b");
+        } else {
+            LOGGER.info("a is equal to b");
+        }
+
+        // greater than
+        if (a > b) {
+            LOGGER.info("a is greater than b");
+        } else {
+            LOGGER.info("a is not greater than b");
+        }
+
+        // less than
+        if (a < b) {
+            LOGGER.info("a is less than b");
+        } else {
+            LOGGER.info("a is not less than b");
+        }
+
+        // greater than or equal to
+        if (a >= b) {
+            LOGGER.info("a is greater than or equal to b");
+        } else {
+            LOGGER.info("a is not greater than or equal to b");
+        }
+
+        // less than or equal to
+        if (a <= b) {
+            LOGGER.info("a is less than or equal to b");
+        } else {
+            LOGGER.info("a is not less than or equal to b");
+        }
     }
+
+    private void logicalOperators() {
+        int a = 10, b = 20, c = 30;
+
+        // logical AND
+        if (a > b && a > c) {
+            LOGGER.info("a is the largest number");
+        } else if (b > a && b > c) {
+            LOGGER.info("b is the largest number");
+        } else if (c > a && c > b) {
+            LOGGER.info("c is the largest number");
+        }
+
+        // logical OR
+        if (a > b || a > c) {
+            LOGGER.info("a is the largest number");
+        } else if (b > a || b > c) {
+            LOGGER.info("b is the largest number");
+        } else if (c > a || c > b) {
+            LOGGER.info("c is the largest number");
+        }
+
+        // logical NOT
+        if (!(a > b)) {
+            LOGGER.info("a is not greater than b");
+        } else {
+            LOGGER.info("a is greater than b");
+        }
+    }
+
     public static void main(String[] args) {
         Operations app = new Operations();
         app.arithmeticOperator();
         app.assignmentOperators();
         app.comparisonOperators();
+        app.logicalOperators();
     }
 }
