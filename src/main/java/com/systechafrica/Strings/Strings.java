@@ -8,36 +8,47 @@ public class Strings {
     private void stringOperations() {
         // initialize a string
         String str = "Hello World";
+        LOGGER.info(str);
 
         // get the length of a string
         int length = str.length();
+        LOGGER.info("The length of the string is " + length);
 
         // get the character at a given index
         char charAt = str.charAt(0);
+        LOGGER.info("The character at index 0 is " + charAt);
 
         // get the index of a given character
         int indexOf = str.indexOf('o');
+        LOGGER.info("The index of the character 'o' is " + indexOf);
 
         // get the index of a given character starting from a given index
         int indexOfFromIndex = str.indexOf('o', 5);
+        LOGGER.info("The index of the character 'o' starting from index 5 is " + indexOfFromIndex);
 
         // string concatenation
         String concat = str.concat("!");
+        LOGGER.info(concat);
 
         // string comparison
         boolean equals = str.equals("Hello World");
+        LOGGER.info("The string is equal to 'Hello World': " + equals);
 
         // string comparison ignoring case
         boolean equalsIgnoreCase = str.equalsIgnoreCase("hello world");
+        LOGGER.info("The string is equal to 'hello world': " + equalsIgnoreCase);
 
         // string comparison using compareTo
         int compareTo = str.compareTo("Hello World");
+        LOGGER.info("The string is equal to 'Hello World': " + (compareTo == 0));
 
         // string comparison using compareToIgnoreCase
         int compareToIgnoreCase = str.compareToIgnoreCase("hello world");
+        LOGGER.info("The string is equal to 'hello world': " + (compareToIgnoreCase == 0));
 
         // string comparison using regionMatches
         boolean regionMatches = str.regionMatches(0, "Hello", 0, 5);
+        LOGGER.info("The string starts with 'Hello': " + regionMatches);
 
     }
 
