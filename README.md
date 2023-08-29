@@ -216,4 +216,72 @@ This would produce the following result:
 #####
 true
 #####
+Java Operator Precedence
+#####
+Operator precedence determines the grouping of terms in an expression. This affects how an expression is evaluated. Certain operators have higher precedence than others; for example, the multiplication operator has higher precedence than the addition operator:
+#####
+For example x = 7 + 3 * 2; here x is assigned 13, not 20 because operator * has higher precedence than +, so it first gets multiplied with 3*2 and then adds into 7.
+#####
+Here, operators with the highest precedence appear at the top of the table, those with the lowest appear at the bottom. Within an expression, higher precedence operators will be evaluated first.
+#####
+Category | Operator | Associativity
+--- | --- | ---
+Postfix | expr++ expr-- | Left to right
+Unary | ++expr --expr +expr -expr ~ ! | Right to left
+Multiplicative | * / % | Left to right
+Additive | + - | Left to right
+Shift | << >> >>> | Left to right
+Relational | < > <= >= instanceof | Left to right
+Equality | == != | Left to right
+Bitwise AND | & | Left to right
+Bitwise XOR | ^ | Left to right
+Bitwise OR | | | Left to right
+Logical AND | && | Left to right
+Logical OR | || | Left to right
+Ternary | ? : | Right to left
+Assignment | = += -= *= /= %= &= ^= |= <<= >>= >>>= | Right to left
+#####
+##### Java Modifiers
+Like other languages, it is possible to modify classes, methods, etc., by using modifiers. There are two categories of modifiers:
+#####
+1. Access Modifiers: default, public , protected, private
+2. Non-access Modifiers: final, abstract, strictfp
+#####
+##### Java Variables
+A variable is a container which holds the value while the Java program is executed. A variable is assigned with a data type.
+#####
+Variable is a name of memory location. There are three types of variables in java:
+#####
+1. local variable
+2. instance variable
+3. static variable
+#####
+##### Java Arrays
+An array is a group of like-typed variables that are referred to by a common name. Arrays in Java work differently than they do in C/C++. Following are some important point about Java arrays.
+#####
+1. In Java all arrays are dynamically allocated.
+2. Since arrays are objects in Java, we can find their length using member length. This is different from C/C++ where we find length using sizeof.
+3. A Java array variable can also be declared like other variables with [] after the data type.
+4. The variables in the array are ordered and each have an index beginning from 0.
+#####
+##### Java Enums
+An enum is a special type of data type which is basically a collection (set) of constants. enum constants are implicitly static and final and can not be changed once created.
+#####
+##### Java Keywords
+Keywords are predefined, reserved words used in Java programming that have special meanings to the compiler. For example: void, true, false, etc.
+#####
+##### Java Expressions
+An expression is a construct made up of variables, operators, and method invocations, which are constructed according to the syntax of the language, that evaluates to a single value.
+#####
+##### Java Statements
+Java Statements are the building blocks of programs. They can be grouped into the following categories:
+#####
+1. Declaration Statements
+2. Expression Statements
+3. Control Flow Statements
+#####
+##### Java Comments
+Java supports single-line and multi-line comments very similar to C and C++. All characters available inside any comment are ignored by Java compiler.
+#####
+
 
