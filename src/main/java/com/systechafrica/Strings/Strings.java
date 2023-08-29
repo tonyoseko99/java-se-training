@@ -1,6 +1,7 @@
 package com.systechafrica.Strings;
 
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class Strings {
     private static final Logger LOGGER = Logger.getLogger(Strings.class.getName());
@@ -49,6 +50,10 @@ public class Strings {
         // string comparison using regionMatches
         boolean regionMatches = str.regionMatches(0, "Hello", 0, 5);
         LOGGER.info("The string starts with 'Hello': " + regionMatches);
+
+        // accepting user input using JOptionPane
+        String input = JOptionPane.showInputDialog("Enter your name: ");
+        LOGGER.info("Your name is " + input);
 
     }
 
