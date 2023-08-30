@@ -57,8 +57,27 @@ public class Strings {
 
     }
 
+    private void builders() {
+        StringBuilder builder = new StringBuilder("Hello World!");
+        builder.replace(6, 11, "Java");
+        LOGGER.info(builder.toString());
+    }
+
+    private void stringOps(){
+        String ta = "A ";
+        ta = ta.concat("B ");
+        String tb = "C ";
+        ta = ta.concat(tb);
+        ta.replace('C', 'D');
+        ta = ta.concat(tb);
+        LOGGER.info(ta);
+
+    }
+
     public static void main(String[] args) {
         Strings app = new Strings();
-        app.stringOperations();
+        // app.stringOperations();
+        // app.builders();
+        app.stringOps();
     }
 }
