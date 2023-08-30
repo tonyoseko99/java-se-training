@@ -29,9 +29,29 @@ public class Arrays {
         }
     }
 
+    // looping through an array
+    private void arrayLoops() {
+        int[] passMark = { 50, 50, 50, 50, 50 };
+        boolean passed;
+
+        for (int i = 0; i < passMark.length; i++) {
+            if (passMark[i] < 50) {
+                passed = false;
+                break;
+
+            } else {
+                passed = true;
+            }
+
+            LOGGER.info("Student " + i + " passed: " + passed);
+        }
+
+    }
+
     public static void main(String[] args) {
         Arrays app = new Arrays();
         app.arrayOps();
+        app.arrayLoops();
     }
 
 }
