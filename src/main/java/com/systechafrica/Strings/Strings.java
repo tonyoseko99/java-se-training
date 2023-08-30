@@ -76,8 +76,8 @@ public class Strings {
 
     public static void main(String[] args) {
         Strings app = new Strings();
-        // app.stringOperations();
-        // app.builders();
+        app.stringOperations();
+        app.builders();
         app.stringOps();
     }
 }
