@@ -48,10 +48,20 @@ public class Arrays {
 
     }
 
+    // multidimensional arrays
+    private void multidimensionalArray() {
+        int[][] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+
+        // get the length of a multidimensional array
+        int length = matrix.length;
+        LOGGER.info("The length of the multidimensional array is " + length);
+    }
+
     public static void main(String[] args) {
         Arrays app = new Arrays();
         app.arrayOps();
         app.arrayLoops();
+        app.multidimensionalArray();
     }
 
 }
