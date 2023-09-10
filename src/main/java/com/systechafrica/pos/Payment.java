@@ -40,7 +40,7 @@ public class Payment {
                 return scanner.nextDouble();
             }
             System.out.println("Invalid input. Please enter a valid amount.");
-            scanner.nextLine(); // Consume invalid input
+            scanner.nextLine();
         }
     }
 }

@@ -23,7 +23,7 @@ public class Menu {
                 }
             }
             System.out.println("Invalid input. Please enter a number between 1 and 4.");
-            scanner.nextLine(); // Consume invalid input
+            scanner.nextLine();
         }
     }
 }
