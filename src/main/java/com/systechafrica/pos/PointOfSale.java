@@ -1,4 +1,4 @@
-package com.systechafrica.POS;
+package com.systechafrica.pos;
 
 public class PointOfSale {
     public void login() {

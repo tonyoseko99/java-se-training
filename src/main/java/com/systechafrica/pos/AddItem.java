@@ -1,4 +1,4 @@
-package com.systechafrica.POS;
+package com.systechafrica.pos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,12 @@ import java.util.Scanner;
 
 public class AddItem {
     // List to store added items
-    private List<Item> items = new ArrayList<>();
+    public List<Item> items = new ArrayList<>();
+
+    // Constructor to accept the list of items
+    public AddItem(List<Item> items) {
+        this.items = items;
+    }
 
     // Add item method
     public void addItem() {
@@ -36,8 +41,8 @@ public class AddItem {
             String choice = scanner.nextLine();
 
             if (!choice.equalsIgnoreCase("y")) {
-                Menu menu = new Menu();
-                menu.getMenu();
+                Payment.makePayment(items); // Call the makePayment method from Payment class
+                break;
             }
         }
 

@@ -1,4 +1,4 @@
-package com.systechafrica.POS;
+package com.systechafrica.pos;
 
 import java.util.Scanner;
 
