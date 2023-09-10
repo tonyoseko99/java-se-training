@@ -3,29 +3,28 @@ package com.systechafrica.pos;
 import java.util.Scanner;
 
 public class Login {
-    String password = "Admin123";
-    int loginAttempts = 0;
+    private static final String DEFAULT_PASSWORD = "Admin123";
+    private static final int MAX_LOGIN_ATTEMPTS = 3;
 
-    public void login() {
+    private int loginAttempts = 0;
+
+    public boolean authenticate() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter password: ");
-        String input = scanner.nextLine();
 
-        // Compare the input with the password
-        if (input.equals(password)) {
-            System.out.println("Welcome to the system");
-            Menu menu = new Menu();
-            menu.getMenu();
+        while (loginAttempts < MAX_LOGIN_ATTEMPTS) {
+            System.out.print("Enter password: ");
+            String inputPassword = scanner.nextLine();
 
-        } else {
-            loginAttempts++;
-            if (loginAttempts < 3) {
-                System.out.println("Incorrect password. Try again");
-                login();
+            if (inputPassword.equals(DEFAULT_PASSWORD)) {
+                System.out.println("Welcome to the system!");
+                return true;
             } else {
-                System.out.println("You have exceeded the number of login attempts");
+                loginAttempts++;
+                System.out.println("Incorrect password. Attempts remaining: " + (MAX_LOGIN_ATTEMPTS - loginAttempts));
             }
         }
-        scanner.close();
+
+        System.out.println("You have exceeded the number of login attempts. Access denied.");
+        return false;
     }
 }
