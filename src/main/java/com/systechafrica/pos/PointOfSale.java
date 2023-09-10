@@ -6,32 +6,40 @@ import java.util.List;
 
 public class PointOfSale {
     public static void main(String[] args) {
-        List<Item> items = new ArrayList<>();
-        int choice;
+        // Create a Login object to handle authentication
+        Login login = new Login();
 
-        do {
-            Menu.displayMenu();
-            choice = Menu.getUserChoice();
+        // Authenticate the user
+        if (login.authenticate()) {
+            List<Item> items = new ArrayList<>();
+            int choice;
 
-            switch (choice) {
-                case 1:
-                    addItem(items);
-                    break;
-                case 2:
-                    if (!items.isEmpty()) {
-                        Payment.makePayment(items);
-                    } else {
-                        System.out.println("No items to process payment. Please add items first.");
-                    }
-                    break;
-                case 3:
-                    displayReceipt(items);
-                    break;
-                case 4:
-                    System.out.println("Exiting the system. Goodbye!");
-                    break;
-            }
-        } while (choice != 4);
+            do {
+                Menu.displayMenu();
+                choice = Menu.getUserChoice();
+
+                switch (choice) {
+                    case 1:
+                        addItem(items);
+                        break;
+                    case 2:
+                        if (!items.isEmpty()) {
+                            Payment.makePayment(items);
+                        } else {
+                            System.out.println("No items to process payment. Please add items first.");
+                        }
+                        break;
+                    case 3:
+                        displayReceipt(items);
+                        break;
+                    case 4:
+                        System.out.println("Exiting the system. Goodbye!");
+                        break;
+                }
+            } while (choice != 4);
+        } else {
+            System.out.println("Access denied. Exiting the system. Goodbye!");
+        }
     }
 
     private static void addItem(List<Item> items) {
