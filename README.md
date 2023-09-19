@@ -114,6 +114,103 @@ Operator | Description | Example
 -- | Decrement operator decreases integer value by one | A-- will give 9
 #####
 
+## 3. Java Object & Classes
+### 3.1. Java Object & Classes
+#### 3.1.1. Java Object
+An entity that has state and behavior is known as an object. For example, a chair, pen, table, keyboard, bike, etc. It can be physical or logical (tangible and intangible). The example of an intangible object is the banking system.
+#####
+An object has three characteristics:
+#####
+1. State: represents the data (value) of an object.
+2. Behavior: represents the behavior (functionality) of an object such as deposit, withdraw, etc.
+3. Identity: An object identity is typically implemented via a unique ID. The value of the ID is not visible to the external user. However, it is used internally by the JVM to identify each object uniquely.
+#####
+For Example:
+#####
+Pen is an object. Its name is Reynolds, color is white, and price is Rs100. It represents the state of the pen. It also represents the behavior such as write, click, etc. Lastly, its identity can be defined by the brand and the cost of the pen.
+##### Syntax
+```java
+class Student{  
+ int id;//field or data member or instance variable  
+ String name;  
+  
+ public static void main(String args[]){  
+  Student s1=new Student();//creating an object of Student  
+  System.out.println(s1.id);  
+  System.out.println(s1.name);  
+ }  
+}  
+```
+
+#### 3.1.2. Java Class
+A class is a group of objects that has common properties. It is a template or blueprint from which objects are created. It is a logical entity.
+#####
+A class in Java can contain:
+#####
+1. Fields
+2. Methods
+3. Constructors
+4. Blocks
+5. Nested class and interface
+#####
+##### Syntax
+```java
+class Student{  
+ int id;//field or data member or instance variable  
+ String name;  
+  
+ public static void main(String args[]){  
+  Student s1=new Student();//creating an object of Student  
+  System.out.println(s1.id);  
+  System.out.println(s1.name);  
+ }  
+}  
+```
+#### 3.1.3. Java Object & Class Example: main within the class
+```java
+class Student{  
+ int id;//field or data member or instance variable  
+ String name;  
+  
+ public static void main(String args[]){  
+  Student s1=new Student();//creating an object of Student  
+  System.out.println(s1.id);  
+  System.out.println(s1.name);  
+ }  
+}  
+```
+#### 3.1.4. Java Object & Class Example: main outside the class
+```java
+class Student{  
+ int id;//field or data member or instance variable  
+ String name;  
+}
+public static void main(String args[]){  
+  Student s1=new Student();//creating an object of Student  
+  System.out.println(s1.id);  
+  System.out.println(s1.name);  
+ }  
+```
+## 4. Java Static Class
+### 4.1. Java Static Class
+#### 4.1.1. Java Static Class
+A static class i.e. created inside a class is called static nested class in java. It cannot access non-static data members and methods. It can be accessed by outer class name.
+#####
+It can access static data members of outer class including private. Static nested class cannot access non-static (instance) data member or method.
+#####
+##### Syntax
+```java
+class A{  
+  static class B{  
+   void msg(){System.out.println("hello");}  
+  }  
+  public static void main(String args[]){  
+  A.B obj=new A.B();//no need to create the instance of static nested class  
+  obj.msg();  
+  }  
+}  
+```
+
 
 
 
