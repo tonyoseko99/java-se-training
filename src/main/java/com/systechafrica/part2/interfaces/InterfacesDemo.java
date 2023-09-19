@@ -10,5 +10,11 @@ public class InterfacesDemo {
         mobileCharger.plugIn();
         mobileCharger.plugOut();
 
+        CalculateArea square = new Square();
+        System.out.println("Area of square: " + square.calculateArea(5, 5));
+
+        CalculatePerimeter squarePerimeter = new Square();
+        System.out.println("Perimeter of square: " + squarePerimeter.calculatePerimeter(5, 5));
+
     }
 }
