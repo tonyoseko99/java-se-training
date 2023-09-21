@@ -7,6 +7,12 @@ public class Main {
         System.out.println(calculator.divide(2, 3));
         // System.out.println(calculator.divide(2, 0)); // throws ArithmeticException
         //                                                 // and terminates the program
-        System.out.println(calculator.divide2(2, 0 ));
+        try {
+            System.out.println(calculator.divide2(2, 0));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Program continues...");
+
     }
 }
