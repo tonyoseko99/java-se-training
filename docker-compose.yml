@@ -1,0 +1,18 @@
+services:
+  javase:
+    image: mysql:latest
+    restart: always
+    container_name: javase
+    environment:
+      MYSQL_DATABASE: 'javase'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3308:3306'
+    expose:
+      - '3306'
+    volumes:
+      - dbdata:/var/lib/mysql
+volumes:
+  dbdata:

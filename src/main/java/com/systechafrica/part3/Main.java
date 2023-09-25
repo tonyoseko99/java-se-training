@@ -1,4 +1,4 @@
-package com.systechafrica.part3ExceptionHandling;
+package com.systechafrica.part3;
 
 public class Main {
     public static void main(String[] args) {

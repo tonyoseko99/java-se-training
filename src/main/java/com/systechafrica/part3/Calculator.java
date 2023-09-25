@@ -1,4 +1,4 @@
-package com.systechafrica.part3ExceptionHandling;
+package com.systechafrica.part3;
 
 public class Calculator {
     public double add (double a, double b) {

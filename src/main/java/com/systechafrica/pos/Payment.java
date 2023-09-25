@@ -13,7 +13,9 @@ public class Payment {
         for (Item item : items) {
             double totalItemPrice = item.getQuantity() * item.getPrice();
             System.out.printf("%-10s | %-10s | %-8d | %-10.2f | %-6.2f%n",
-                    item.getCode(), item.getName(), item.getQuantity(), item.getPrice(), totalItemPrice);
+                    item.getCode(), item.getName(), item.getQuantity(), item.getPrice(), totalItemPrice); // %-10s means left-justify the string in a 10-character field
+                                                                                                        // %n is a platform-independent newline character
+                                                                                                        
             totalDue += totalItemPrice;
         }
 

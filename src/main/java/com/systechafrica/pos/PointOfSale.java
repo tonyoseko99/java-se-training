@@ -11,7 +11,10 @@ public class PointOfSale {
 
         // Authenticate the user
         if (login.authenticate()) {
+            // Create an empty list to hold items
             List<Item> items = new ArrayList<>();
+
+            // Display the menu and get user choice
             int choice;
 
             do {
@@ -42,7 +45,7 @@ public class PointOfSale {
         }
     }
 
-    private static void addItem(List<Item> items) {
+    private static void addItem(List<Item> items) { // Add an item to the list
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter Item Code: ");
         String code = scanner.nextLine();
@@ -58,6 +61,7 @@ public class PointOfSale {
         System.out.println("Item added successfully.");
     }
 
+    // Display the receipt with total due and payment information
     private static void displayReceipt(List<Item> items) {
         if (items.isEmpty()) {
             System.out.println("No items to display in the receipt.");
