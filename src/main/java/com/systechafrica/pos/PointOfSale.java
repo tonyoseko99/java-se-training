@@ -1,6 +1,12 @@
 package com.systechafrica.pos;
 
 import java.util.Scanner;
+
+import com.systechafrica.pos.jdbc.DBUtils;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +29,11 @@ public class PointOfSale {
 
                 switch (choice) {
                     case 1:
-                        addItem(items);
+                        try {
+                            addItem(items);
+                        } catch (SQLException e) {
+                            System.out.println("Error adding item to the database: " + e.getMessage());
+                        }
                         break;
                     case 2:
                         if (!items.isEmpty()) {
@@ -45,7 +55,7 @@ public class PointOfSale {
         }
     }
 
-    private static void addItem(List<Item> items) { // Add an item to the list
+    private static void addItem(List<Item> items) throws SQLException { // Add an item to the list
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter Item Code: ");
         String code = scanner.nextLine();
@@ -59,6 +69,9 @@ public class PointOfSale {
         Item item = new Item(code, name, quantity, price);
         items.add(item);
         System.out.println("Item added successfully.");
+
+        // Add the item to the database
+        addItemToDatabase(item);
     }
 
     // Display the receipt with total due and payment information
@@ -69,5 +82,19 @@ public class PointOfSale {
         }
 
         Payment.makePayment(items); // Display the receipt with total due and payment information
+    }
+
+    private static void addItemToDatabase(Item item) throws SQLException {
+        Connection connection = DBUtils.getConnection();
+        String sql = "INSERT INTO items (code, name, quantity, price) VALUES (?, ?, ?, ?)";
+
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, item.getCode());
+        statement.setString(2, item.getName());
+        statement.setInt(3, item.getQuantity());
+        statement.setDouble(4, item.getPrice());
+
+        statement.executeUpdate();
+        connection.close();
     }
 }
