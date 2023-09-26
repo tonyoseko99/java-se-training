@@ -14,13 +14,5 @@ public class FileLogging {
         LOGGER.info("This is a log message");
     }
 
-    static class CustomFormatter extends Formatter {
-        @Override
-        public String format(LogRecord record) {
-            String method = record.getSourceMethodName();
-            String level = record.getLevel().getName();
-            String message = record.getMessage();
-            return method + " | " + level + " | " + message + "\n";
-        }
-    }
+
 }

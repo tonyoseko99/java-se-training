@@ -1,4 +1,4 @@
-package com.systechafrica.part3.jdbc;
+package com.systechafrica.pos.jdbc;
 
 import com.systechafrica.pos.customFormatter.CustomFormatter;
 import java.io.IOException;
@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 
 public class DatabaseAccessDemo {
     private static final Logger LOGGER = Logger.getLogger(DatabaseAccessDemo.class.getName());
+    private static Connection connection;
 
     public static void main(String[] args) throws SecurityException, IOException {
 
@@ -22,19 +23,20 @@ public class DatabaseAccessDemo {
             fileHandler.setFormatter(formatter);
             LOGGER.info("This is a database log message");
 
-            // load the db driver
+            // load the database driver
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             // create a connection to the database
             String connectionUrl = "jdbc:mysql://localhost:3308/javase";
             String user = "user";
             String password = "password";
-            Connection connection = DriverManager.getConnection(connectionUrl, user, password);
+
+            connection = DriverManager.getConnection(connectionUrl, user, password);
 
             // create a statement from the connection
             Statement statement = connection.createStatement();
 
-
+            
 
         } 
         
@@ -43,7 +45,8 @@ public class DatabaseAccessDemo {
         }
         catch (IOException e) {
             LOGGER.severe("Cannot READ / WRITE the database" + e.getMessage());
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             LOGGER.severe("Error connecting to the database" + e.getMessage());
         } 
     }
