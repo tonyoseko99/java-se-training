@@ -8,10 +8,12 @@ CREATE TABLE IF NOT EXISTS `items` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-CREATE TABLE sales_orders (
+CREATE TABLE orders (
     id INT NOT NULL AUTO_INCREMENT,
-    total_amount DECIMAL(10,2) NOT NULL,
-    PRIMARY KEY (id)
+    item_id INT NOT NULL,
+    total_due DECIMAL(10,2) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (item_id) REFERENCES items(id)
 );
 
 

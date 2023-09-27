@@ -36,29 +36,57 @@ public class DBUtils {
             // create a statement object to send to the database
             Statement statement = connection.createStatement();
 
-            // create a table ITEMS
-            String createTableSql = "CREATE TABLE IF NOT EXISTS items ("
-                    + "ID INT NOT NULL AUTO_INCREMENT,"
-                    + "CODE VARCHAR(20) NOT NULL,"
-                    + "NAME VARCHAR(255) NOT NULL,"
-                    + "QUANTITY INT NOT NULL,"
-                    + "PRICE DOUBLE NOT NULL,"
-                    + "PRIMARY KEY (ID)"
-                    + ")";
-            statement.executeUpdate(createTableSql);
+            // DROP table ITEMS
+            dropTable(statement);
 
-        } 
-        
-        catch (ClassNotFoundException e){
+            // create a table items
+            createTable(statement);
+
+            // create a table orders
+            createTableOrders(statement);
+
+        } catch (ClassNotFoundException e) {
             LOGGER.severe("Error loading the database driver" + e.getMessage());
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             LOGGER.severe("Cannot READ / WRITE the database" + e.getMessage());
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             LOGGER.severe("Error connecting to the database" + e.getMessage());
         } finally {
             closeDatabaseResources();
+        }
+    }
+
+    private static void dropTable(Statement statement) throws SQLException {
+        String dropTableSql = "DROP TABLE IF EXISTS ITEMS";
+        statement.executeUpdate(dropTableSql);
+    }
+
+    private static void createTable(Statement statement) throws SQLException {
+        String createTableSql = "CREATE TABLE IF NOT EXISTS items ("
+                + "ID INT NOT NULL AUTO_INCREMENT,"
+                + "CODE VARCHAR(20) NOT NULL,"
+                + "NAME VARCHAR(255) NOT NULL,"
+                + "QUANTITY INT NOT NULL,"
+                + "PRICE DOUBLE NOT NULL,"
+                + "PRIMARY KEY (ID)"
+                + ")";
+        statement.executeUpdate(createTableSql);
+        LOGGER.info("Items table created successfully...");
+    }
+
+    private static void createTableOrders(Statement statement) throws SQLException {
+        try {
+            String createTableSql = "CREATE TABLE IF NOT EXISTS orders ("
+                + "ID INT NOT NULL AUTO_INCREMENT,"
+                + "ITEM_ID INT NOT NULL,"
+                + "TOTAL_DUE DOUBLE NOT NULL,"
+                + "PRIMARY KEY (ID),"
+                + "FOREIGN KEY (ITEM_ID) REFERENCES items(ID)"
+                + ")";
+        statement.executeUpdate(createTableSql);
+        LOGGER.info("Orders table created successfully...");
+        } catch (Exception e) {
+            LOGGER.severe("Error creating the orders table: " + e.getMessage());
         }
     }
 
@@ -66,6 +94,7 @@ public class DBUtils {
         try {
             if (connection == null) {
                 connection = DriverManager.getConnection(connectionUrl, user, password);
+                LOGGER.info("Connected to the Database...");
             }
             return connection;
         } catch (Exception e) {
@@ -78,6 +107,7 @@ public class DBUtils {
         if (connection != null) {
             try {
                 connection.close();
+                LOGGER.info("Database connection closed...");
             } catch (SQLException e) {
                 LOGGER.severe("Error closing the database connection: " + e.getMessage());
             }

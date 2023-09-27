@@ -2,16 +2,29 @@ package com.systechafrica.pos;
 
 import java.util.Scanner;
 
+import com.systechafrica.pos.customFormatter.PointOfSaleFormatter;
 import com.systechafrica.pos.jdbc.DBUtils;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
 
-public class PointOfSale {
+public class ReviewedPointOfSale {
+    private static final Logger LOGGER = Logger.getLogger(ReviewedPointOfSale.class.getName());
     public static void main(String[] args) {
+        try {
+            LOGGER.addHandler(new FileHandler("db-log.txt", true));
+        } catch (SecurityException e) {
+            LOGGER.severe("Error loading the database driver" + e.getMessage());
+        } catch (IOException e) {
+            LOGGER.severe("Cannot READ / WRITE the database" + e.getMessage());
+        }
+        LOGGER.getHandlers()[0].setFormatter(new PointOfSaleFormatter());
         // Create a Login object to handle authentication
         Login login = new Login();
 
@@ -31,6 +44,7 @@ public class PointOfSale {
                     case 1:
                         try {
                             addItem(items);
+                            LOGGER.info("Item added successfully.");
                         } catch (SQLException e) {
                             System.out.println("Error adding item to the database: " + e.getMessage());
                         }
@@ -38,20 +52,22 @@ public class PointOfSale {
                     case 2:
                         if (!items.isEmpty()) {
                             Payment.makePayment(items);
+                            LOGGER.info("Payment made successfully.");
                         } else {
-                            System.out.println("No items to process payment. Please add items first.");
+                            LOGGER.warning("No items to display in the receipt.");
                         }
                         break;
                     case 3:
                         displayReceipt(items);
+                        LOGGER.info("Receipt displayed successfully.");
                         break;
                     case 4:
-                        System.out.println("Exiting the system. Goodbye!");
+                        LOGGER.info("Exiting the system. Goodbye!");
                         break;
                 }
             } while (choice != 4);
         } else {
-            System.out.println("Access denied. Exiting the system. Goodbye!");
+            LOGGER.warning("Authentication failed. Exiting the system.");
         }
     }
 
