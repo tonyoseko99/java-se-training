@@ -35,7 +35,7 @@ public class ReviewedPointOfSale {
         DBUtils dbUtils = new DBUtils();
 
         // Authenticate the user
-        if (login.authenticate()) {
+        if (login.authenticate(dbUtils.getConnection())) {
             // Create an empty list to hold items
             List<ItemInterface> items = new ArrayList<>();
 

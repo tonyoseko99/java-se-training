@@ -45,6 +45,12 @@ public class DBUtils {
             // create a table orders
             createTableOrders(statement);
 
+            // create a table users
+            createTableUsers(statement);
+
+            // insert a default password for the admin, Admin123
+            insertDefaultPassword(statement);
+
         } catch (ClassNotFoundException e) {
             LOGGER.severe("Error loading the database driver" + e.getMessage());
         } catch (IOException e) {
@@ -90,7 +96,23 @@ public class DBUtils {
         }
     }
 
-    // retrieve last inserted item
+    // create a users table with a default password for the admin, Admin123
+    private static void createTableUsers(Statement statement) throws SQLException {
+        String createTableSql = "CREATE TABLE IF NOT EXISTS users ("
+                + "ID INT NOT NULL AUTO_INCREMENT,"
+                + "PASSWORD VARCHAR(255) NOT NULL DEFAULT 'Admin123',"
+                + "PRIMARY KEY (ID)"
+                + ")";
+        statement.executeUpdate(createTableSql);
+        LOGGER.info("Users table created successfully...");
+    }
+
+    // insert a default password for the admin, Admin123
+    private static void insertDefaultPassword(Statement statement) throws SQLException {
+        String insertSql = "INSERT INTO users (PASSWORD) VALUES ('Admin123')";
+        statement.executeUpdate(insertSql);
+        LOGGER.info("Default password inserted successfully...");
+    }
 
     public static Connection getConnection() {
         try {
