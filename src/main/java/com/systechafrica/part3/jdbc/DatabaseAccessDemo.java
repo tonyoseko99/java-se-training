@@ -1,6 +1,5 @@
 package com.systechafrica.part3.jdbc;
 
-import com.systechafrica.pos.customFormatter.CustomFormatter;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
+
+import com.systechafrica.posReviewed.customFormatter.CustomFormatter;
 
 
 public class DatabaseAccessDemo {

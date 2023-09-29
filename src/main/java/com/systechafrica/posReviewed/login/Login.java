@@ -1,4 +1,4 @@
-package com.systechafrica.pos.login;
+package com.systechafrica.posReviewed.login;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 
-import com.systechafrica.pos.customFormatter.CustomFormatter;
+import com.systechafrica.posReviewed.customFormatter.CustomFormatter;
 
 
 public class Login implements LoginInterface {

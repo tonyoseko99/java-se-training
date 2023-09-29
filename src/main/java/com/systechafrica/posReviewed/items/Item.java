@@ -1,4 +1,4 @@
-package com.systechafrica.pos.items;
+package com.systechafrica.posReviewed.items;
 
 public class Item implements ItemInterface {
     private String code;

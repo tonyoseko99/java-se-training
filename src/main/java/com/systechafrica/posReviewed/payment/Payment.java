@@ -1,14 +1,13 @@
-package com.systechafrica.pos.payment;
+package com.systechafrica.posReviewed.payment;
 
 import java.util.Scanner;
-
-import com.systechafrica.pos.customFormatter.PointOfSaleFormatter;
-import com.systechafrica.pos.items.ItemInterface;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
+
+import com.systechafrica.posReviewed.customFormatter.PointOfSaleFormatter;
+import com.systechafrica.posReviewed.items.ItemInterface;
 
 public class Payment implements PaymentInterface {
     private static final Logger LOGGER = Logger.getLogger(Payment.class.getName());

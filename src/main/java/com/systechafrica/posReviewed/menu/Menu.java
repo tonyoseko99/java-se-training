@@ -1,4 +1,4 @@
-package com.systechafrica.pos.menu;
+package com.systechafrica.posReviewed.menu;
 
 import java.util.Scanner;
 

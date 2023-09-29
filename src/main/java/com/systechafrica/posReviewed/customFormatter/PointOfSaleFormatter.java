@@ -1,4 +1,4 @@
-package com.systechafrica.pos.customFormatter;
+package com.systechafrica.posReviewed.customFormatter;
 
 import java.util.logging.LogRecord;
 

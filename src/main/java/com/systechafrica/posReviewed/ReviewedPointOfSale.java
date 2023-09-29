@@ -1,15 +1,6 @@
-package com.systechafrica.pos;
+package com.systechafrica.posReviewed;
 
 import java.util.Scanner;
-
-import com.systechafrica.pos.customFormatter.PointOfSaleFormatter;
-import com.systechafrica.pos.items.Item;
-import com.systechafrica.pos.items.ItemInterface;
-import com.systechafrica.pos.jdbc.DBUtils;
-import com.systechafrica.pos.login.Login;
-import com.systechafrica.pos.menu.Menu;
-import com.systechafrica.pos.payment.Payment;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,6 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
+
+import com.systechafrica.posReviewed.customFormatter.PointOfSaleFormatter;
+import com.systechafrica.posReviewed.items.Item;
+import com.systechafrica.posReviewed.items.ItemInterface;
+import com.systechafrica.posReviewed.jdbc.DBUtils;
+import com.systechafrica.posReviewed.login.Login;
+import com.systechafrica.posReviewed.menu.Menu;
+import com.systechafrica.posReviewed.payment.Payment;
 
 public class ReviewedPointOfSale {
     private static final Logger LOGGER = Logger.getLogger(ReviewedPointOfSale.class.getName());

@@ -1,4 +1,4 @@
-package com.systechafrica.pos.items;
+package com.systechafrica.posReviewed.items;
 
 public interface ItemInterface {
     String getCode();

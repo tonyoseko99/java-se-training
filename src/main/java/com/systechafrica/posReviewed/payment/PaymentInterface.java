@@ -1,8 +1,8 @@
-package com.systechafrica.pos.payment;
+package com.systechafrica.posReviewed.payment;
 
 import java.util.List;
 
-import com.systechafrica.pos.items.ItemInterface;
+import com.systechafrica.posReviewed.items.ItemInterface;
 
 public interface PaymentInterface {
     void makePayment(List<ItemInterface> items);

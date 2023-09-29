@@ -1,6 +1,4 @@
-package com.systechafrica.pos.jdbc;
-
-import com.systechafrica.pos.customFormatter.CustomFormatter;
+package com.systechafrica.posReviewed.jdbc;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -9,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
+
+import com.systechafrica.posReviewed.customFormatter.CustomFormatter;
 
 
 public class DBUtils {
