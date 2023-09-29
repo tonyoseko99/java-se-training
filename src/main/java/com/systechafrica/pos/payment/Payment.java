@@ -2,13 +2,26 @@ package com.systechafrica.pos.payment;
 
 import java.util.Scanner;
 
+import com.systechafrica.pos.customFormatter.PointOfSaleFormatter;
 import com.systechafrica.pos.items.ItemInterface;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
 
 public class Payment implements PaymentInterface {
+    private static final Logger LOGGER = Logger.getLogger(Payment.class.getName());
+
     @Override
     public void makePayment(List<ItemInterface> items) {
+        try {
+            LOGGER.addHandler(new FileHandler("db-log.txt", true));
+        } catch (SecurityException | IOException e) {
+            LOGGER.severe("Error initializing logger " + e.getMessage());
+        } 
+        LOGGER.getHandlers()[0].setFormatter(new PointOfSaleFormatter());
+        
         // Calculate total due and display receipt
         double totalDue = 0;
         System.out.println("************ RECEIPT ************");

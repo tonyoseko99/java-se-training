@@ -90,6 +90,8 @@ public class DBUtils {
         }
     }
 
+    // retrieve last inserted item
+
     public static Connection getConnection() {
         try {
             if (connection == null) {
