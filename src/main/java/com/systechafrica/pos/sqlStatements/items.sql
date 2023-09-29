@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
+-- mysql create table orders
 CREATE TABLE orders (
     id INT NOT NULL AUTO_INCREMENT,
     item_id INT NOT NULL,
@@ -17,5 +18,16 @@ CREATE TABLE orders (
 );
 
 
+-- mysql insert into items
 INSERT INTO `items` (`code`, `name`, `price`) VALUES
 (? , ? , ? );
+
+-- create table users
+CREATE TABLE users (
+    id INT NOT NULL AUTO_INCREMENT,
+    password VARCHAR(255) NOT NULL DEFAULT 'Admin123',
+    PRIMARY KEY (id)
+);
+
+-- retrieve user with password, Admin123
+SELECT * FROM users WHERE password = ?;
