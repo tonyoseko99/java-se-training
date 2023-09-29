@@ -1,13 +1,14 @@
-package com.systechafrica.pos;
+package com.systechafrica.pos.login;
 
 import java.util.Scanner;
 
-public class Login {
+public class Login implements LoginInterface {
     private static final String DEFAULT_PASSWORD = "Admin123";
     private static final int MAX_LOGIN_ATTEMPTS = 3;
 
     private int loginAttempts = 0;
 
+    @Override
     public boolean authenticate() {
         Scanner scanner = new Scanner(System.in);
 

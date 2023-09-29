@@ -1,9 +1,10 @@
-package com.systechafrica.pos;
+package com.systechafrica.pos.menu;
 
 import java.util.Scanner;
 
-public class Menu {
-    public static void displayMenu() {
+public class Menu implements MenuInterface{
+    @Override
+    public void displayMenu() {
         System.out.println("************ SYSTECH POS SYSTEM ************");
         System.out.println("1. Add Item");
         System.out.println("2. Make Payment");
@@ -11,7 +12,8 @@ public class Menu {
         System.out.println("4. Exit");
     }
 
-    public static int getUserChoice() {
+    @Override
+    public int getUserChoice() {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {

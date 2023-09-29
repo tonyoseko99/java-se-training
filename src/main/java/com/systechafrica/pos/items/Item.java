@@ -1,6 +1,6 @@
-package com.systechafrica.pos;
+package com.systechafrica.pos.items;
 
-public class Item {
+public class Item implements ItemInterface {
     private String code;
     private String name;
     private int quantity;
@@ -13,19 +13,22 @@ public class Item {
         this.price = price;
     }
 
-    // Getters and setters
+    @Override
     public String getCode() {
         return code;
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public int getQuantity() {
         return quantity;
     }
 
+    @Override
     public double getPrice() {
         return price;
     }

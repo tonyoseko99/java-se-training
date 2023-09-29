@@ -3,7 +3,11 @@ package com.systechafrica.pos;
 import java.util.Scanner;
 
 import com.systechafrica.pos.customFormatter.PointOfSaleFormatter;
+import com.systechafrica.pos.items.Item;
 import com.systechafrica.pos.jdbc.DBUtils;
+import com.systechafrica.pos.login.Login;
+import com.systechafrica.pos.menu.Menu;
+import com.systechafrica.pos.payment.Payment;
 
 import java.io.IOException;
 import java.sql.Connection;

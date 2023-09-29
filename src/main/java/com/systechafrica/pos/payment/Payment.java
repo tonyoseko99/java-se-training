@@ -1,16 +1,20 @@
-package com.systechafrica.pos;
+package com.systechafrica.pos.payment;
 
 import java.util.Scanner;
+
+import com.systechafrica.pos.items.ItemInterface;
+
 import java.util.List;
 
-public class Payment {
-    public static void makePayment(List<Item> items) {
+public class Payment implements PaymentInterface {
+    @Override
+    public void makePayment(List<ItemInterface> items) {
         // Calculate total due and display receipt
         double totalDue = 0;
         System.out.println("************ RECEIPT ************");
         System.out.println("Item Code | Item Name | Quantity | Unit Price | Total");
 
-        for (Item item : items) {
+        for (ItemInterface item : items) {
             double totalItemPrice = item.getQuantity() * item.getPrice();
             System.out.printf("%-10s | %-10s | %-8d | %-10.2f | %-6.2f%n",
                     item.getCode(), item.getName(), item.getQuantity(), item.getPrice(), totalItemPrice); // %-10s means left-justify the string in a 10-character field
