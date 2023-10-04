@@ -9,7 +9,7 @@ public class FunctionalProgrammingDemo {
             List<Integer> integers = List.of(1, 2, 3, 4, 5);
             integers.forEach(integer -> System.out.println(integer));
         };
-        lambdaFunctions.run();
+        lambdaFunctions.run(); 
 
         // functions
         Calculator calculator = (a, b) -> a + b;
