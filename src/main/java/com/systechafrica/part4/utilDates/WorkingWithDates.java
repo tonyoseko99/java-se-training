@@ -1,4 +1,4 @@
-package com.systechafrica.part4UtilDates;
+package com.systechafrica.part4.utilDates;
 
 import java.util.Calendar;
 import java.util.Date;

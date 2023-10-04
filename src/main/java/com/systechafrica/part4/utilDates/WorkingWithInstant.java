@@ -1,4 +1,4 @@
-package com.systechafrica.part4UtilDates;
+package com.systechafrica.part4.utilDates;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
