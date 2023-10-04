@@ -37,6 +37,52 @@ public class EnumsDemo {
 
         int monthPosition = Month.MARCH.ordinal();
         System.out.println(monthPosition);
+
+        // using switch statements with enums
+        Month[] monthsOftheYear = Month.values();
+        for (Month m : monthsOftheYear) {
+            switch (m) {
+                case JANUARY:
+                    System.out.println("January is the first month of the year");
+                    break;
+                case FEBRUARY:
+                    System.out.println("February is the second month of the year");
+                    break;
+                case MARCH:
+                    System.out.println("March is the third month of the year");
+                    break;
+                case APRIL:
+                    System.out.println("April is the fourth month of the year");
+                    break;
+                case MAY:
+                    System.out.println("May is the fifth month of the year");
+                    break;
+                case JUNE:
+                    System.out.println("June is the sixth month of the year");
+                    break;
+                case JULY:
+                    System.out.println("July is the seventh month of the year");
+                    break;
+                case AUGUST:
+                    System.out.println("August is the eighth month of the year");
+                    break;
+                case SEPTEMBER:
+                    System.out.println("September is the ninth month of the year");
+                    break;
+                case OCTOBER:
+                    System.out.println("October is the tenth month of the year");
+                    break;
+                case NOVEMBER:
+                    System.out.println("November is the eleventh month of the year");
+                    break;
+                case DECEMBER:
+                    System.out.println("December is the twelfth month of the year");
+                    break;
+                default:
+                    System.out.println("Invalid month");
+                    break;
+            }
+        }
     }
     public static void main(String[] args) {
         EnumsDemo.seasonFunctions();
